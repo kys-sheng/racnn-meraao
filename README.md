@@ -71,7 +71,7 @@ ens  = ri.load_ensemble("bumphunt", "racnnclassiflows", "best_model", "weights")
 
 **Datasets.** HDF5 files with the train/validation/test splits, the fine-tuning sets of Figs 7 and 15, and the mono-jet parameter-point sets (`theta_sets.json`). Arrays are stored normalised, exactly as the networks see them, together with the scalers. `ds.unnormalize_input(...)` and `ds.unnormalize_output(...)` return physical values.
 
-**Figure data.** CSV files for Fig 7 and Fig 16. Column descriptions are in the dataset card.
+**Figure data.** CSV files for Figs 7, 15 and 16. Column descriptions are in the dataset card.
 
 ## Training and fine-tuning
 
@@ -88,8 +88,10 @@ python finetune_model.py $(grep -v '^#' configs/finetune_fig7.txt | sed -n 1p)  
 | `bumphunt/configs/paper_models.txt` | the bump-hunt models, incl. the NECNN baseline |
 | `bumphunt/configs/finetune_fig7.txt` | Fig 7 fine-tuning |
 | `bumphunt/configs/scratch_fig7.txt` | Fig 7 from-scratch CNN-Flow baselines |
+| `bumphunt/configs/scratch_racnn_fig7.txt` | Fig 7 from-scratch RACNN-ClassiFlow baselines |
 | `monojet/configs/paper_models.txt` | the mono-jet models, incl. the NECNN baseline |
-| `monojet/configs/finetune_fig15.txt` | Fig 15 fine-tuning |
+| `monojet/configs/finetune_fig15.txt` | Fig 15 fine-tuning: linear or log normalisation, flow head only or full |
+| `monojet/configs/scratch_fig15.txt` | Fig 15 from-scratch RACNN-ClassiFlow and CNN-Flow baselines |
 
 Training writes to `runs/`. Run-to-run randomness means a retrained model will not be bit-identical to the released weights.
 
@@ -97,7 +99,7 @@ Training writes to `runs/`. Run-to-run randomness means a retrained model will n
 
 With only the released files and this code:
 
-* **Bump hunt.** For each model family, the released weights of the paper's best run reproduce the validation loss stored at the saved epoch, to machine precision. The ensemble test NLLs of Table 2 are reproduced: RACNN-ClassiFlow −4.602, RACNN-Flow −4.490, CNN-ClassiFlow −2.996.
+* **Bump hunt.** For each model family, the released weights of the paper's best run reproduce the validation loss stored at the saved epoch, to machine precision. The ensemble test NLLs of Table 2 are reproduced: RACNN-ClassiFlow −4.602, RACNN-Flow −4.490, CNN-ClassiFlow −3.004, CNN-Flow −2.986.
 * **Mono-jet.** The Fig 15 starting points are reproduced: RACNN-ClassiFlow-$\mathcal{L}$ run 5, NLL −0.567; $\Delta$ run 4, NLL −0.488. The classifiers reproduce their stored validation losses. The flow validation losses logged during the original training differ from what this version of the trainer computes for the same weights, so retraining may select different checkpoints than the released ones.
 
 ## Licence

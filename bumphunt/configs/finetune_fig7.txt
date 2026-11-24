@@ -1,4 +1,5 @@
 # Bump hunt Fig 7: fine-tuning RACNN-ClassiFlow run 5 on a single fixed signal region, 5 runs per case.
+# Evaluated on finetune/test_{low,high}.h5.
 # Columns: MODEL_TYPE DATA_PATH SAVE_PATH NOISE PSL LOAD_PATH MR_TYPE FREEZE  ->  python finetune_model.py <columns...>  (run from bumphunt/)
 # FREEZE reproduces what the paper runs actually did (checked from the saved weights):
 #   True  = CNN/aux/merger/MLP heads frozen, only the flow trained   (mr1s_low, mr5s_low, mr10s_low)
