@@ -1,0 +1,18 @@
+# Mono-jet Fig 15: fine-tuning RACNN-ClassiFlow-L run 5 on a fixed signal region with N = 1, 10, 100 parameter points, 5 runs each.
+# Columns: MODEL_TYPE DATA_PATH SAVE_PATH NOISE MODEL_SIZE PSL JAMMY_LAYERS LOAD_PATH MR_TYPE FREEZE LOAD_EDIFF
+#   ->  python finetune_model.py <columns...>  (run from monojet/). Paper runs were frozen (only the flow trained); NOISE=True is s+b & b.
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w1_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w1_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w1_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w1_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w1_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w10_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w10_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w10_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w10_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w10_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w100_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w100_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w100_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w100_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune/w100_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False

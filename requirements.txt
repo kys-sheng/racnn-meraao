@@ -1,0 +1,14 @@
+# Tested with Python 3.13, torch 2.12, numpy 2.5, h5py 3.14, scikit-learn 1.7, matplotlib 3.10.
+torch>=2.1
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+pandas>=2.0
+matplotlib>=3.7
+tqdm>=4.66
+h5py>=3.9
+safetensors>=0.4
+huggingface_hub>=0.25
+# Normalizing-flow library, pinned to the commit the models were trained with.
+# It pulls in astropy, healpy and mhealpy (healpy has no Windows wheels: use Linux, macOS or WSL).
+jammy_flows @ git+https://github.com/thoglu/jammy_flows.git@4ca7aec

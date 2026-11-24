@@ -1,0 +1,50 @@
+# Bump hunt: the paper's models, 5 independent runs per family (paper ensembles use the 3 best, see ensembles.json on Hugging Face).
+# Columns: MODEL_TYPE DATA_PATH SAVE_PATH NOISE PSL     ->  python train_model.py <columns...>  (run from bumphunt/)
+# NOISE=True: train on signal+background and background-only samples. PSL=False: linear histogram scale.
+# The original run list was not kept; NOISE/PSL are taken from the surviving NECNN logs, which use the same setup.
+racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_1 True False
+racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_2 True False
+racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_3 True False
+racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_4 True False
+racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_5 True False
+cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_1 True False
+cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_2 True False
+cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_3 True False
+cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_4 True False
+cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_5 True False
+racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_1 True False
+racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_2 True False
+racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_3 True False
+racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_4 True False
+racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_5 True False
+cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_1 True False
+cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_2 True False
+cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_3 True False
+cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_4 True False
+cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_5 True False
+racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_1 True False
+racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_2 True False
+racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_3 True False
+racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_4 True False
+racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_5 True False
+cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_1 True False
+cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_2 True False
+cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_3 True False
+cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_4 True False
+cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_5 True False
+# NECNN baseline (appendix): CNN + event counts only, no window range
+necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_1 True False
+necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_2 True False
+necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_3 True False
+necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_4 True False
+necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_5 True False
+necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_1 True False
+necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_2 True False
+necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_3 True False
+necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_4 True False
+necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_5 True False
+necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_1 True False
+necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_2 True False
+necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_3 True False
+necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_4 True False
+necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_5 True False

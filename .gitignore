@@ -1,0 +1,8 @@
+# downloaded from Hugging Face (scripts/download.py) and training outputs
+/data
+/weights
+/runs
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
