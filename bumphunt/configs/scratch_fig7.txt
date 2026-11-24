@@ -1,5 +1,5 @@
 # Bump hunt Fig 7 baselines: CNN-Flow trained from scratch on each fixed signal region, without (NOISE=False) and with (NOISE=True) background.
-# Evaluated on scratch/<case>/test.h5 (the test set these runs were scored on; not the same events as finetune/test_{low,high}.h5).
+# Evaluated on scratch/<case>/test.h5: the same events as finetune/test_{low,high}.h5, normalised with this case's scalers.
 cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_1 False False
 cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_2 False False
 cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_3 False False

@@ -1,47 +1,44 @@
-# Bump hunt Fig 7: fine-tuning RACNN-ClassiFlow run 5 on a single fixed signal region, 5 runs per case.
+# Bump hunt Fig 7: fine-tuning RACNN-ClassiFlow run 5 on a single fixed signal region, flow head only (FREEZE=True: CNN/aux/merger/trunk/classifier frozen), 5 runs per case.
 # Evaluated on finetune/test_{low,high}.h5.
 # Columns: MODEL_TYPE DATA_PATH SAVE_PATH NOISE PSL LOAD_PATH MR_TYPE FREEZE  ->  python finetune_model.py <columns...>  (run from bumphunt/)
-# FREEZE reproduces what the paper runs actually did (checked from the training logs, which print freeze and the frozen parameters,
-# and from the saved weights, whose non-flow tensors equal or differ from racnnclassiflows_5/best_model.pt):
-#   True  = CNN/aux/merger/MLP heads frozen, only the flow trained   (mr1s_low, mr5s_low, mr10s_low)
-#   False = whole network trained                                    (mr3s_low and all *_high cases)
+# The mr3s_low and *_high runs of the paper were redone head-only in Nov 2026 (the first versions had been fine-tuned in full by mistake).
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high False
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high False
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
 racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high False
-racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high False
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
