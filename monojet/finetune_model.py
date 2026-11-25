@@ -56,8 +56,8 @@ if __name__ == "__main__":
     NOISE      = eval(sys.argv[4])
     load_path  = sys.argv[8]
     mr_type    = sys.argv[9]
-    freeze     = eval(sys.argv[10])      # was the raw string, so "False" was truthy and every original run was frozen
-    load_ediff    = eval(sys.argv[11])   # same fix as freeze
+    freeze     = eval(sys.argv[10])      # True or False
+    load_ediff    = eval(sys.argv[11])   # True or False
     assert isinstance(freeze, bool) and isinstance(load_ediff, bool), (freeze, load_ediff)
 
     if sys.argv[5]: model_size = eval(sys.argv[5])

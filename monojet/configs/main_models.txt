@@ -1,0 +1,51 @@
+# Mono-jet: the paper's models, 5 independent runs per family (the paper ensembles use 3 of them, see ensembles.json on Hugging Face).
+# Each line is one training run: <script> <arguments>. Run from this analysis folder, e.g.
+#   python $(grep -v '^#' configs/main_models.txt | sed -n 1p)
+# train_model.py arguments: MODEL_TYPE DATA_PATH SAVE_PATH NOISE MODEL_SIZE PSL JAMMY_LAYERS
+
+# --- RACNN / CNN x ClassiFlow / Flow / Classifier, and the NECNN baseline (paper appendix)
+train_model.py racnnclassiflows ../data/monojet ../runs/monojet/racnnclassiflows_1 True 2 False gggt
+train_model.py racnnclassiflows ../data/monojet ../runs/monojet/racnnclassiflows_2 True 2 False gggt
+train_model.py racnnclassiflows ../data/monojet ../runs/monojet/racnnclassiflows_3 True 2 False gggt
+train_model.py racnnclassiflows ../data/monojet ../runs/monojet/racnnclassiflows_4 True 2 False gggt
+train_model.py racnnclassiflows ../data/monojet ../runs/monojet/racnnclassiflows_5 True 2 False gggt
+train_model.py cnnclassiflows ../data/monojet ../runs/monojet/cnnclassiflows_1 True 2 False gggt
+train_model.py cnnclassiflows ../data/monojet ../runs/monojet/cnnclassiflows_2 True 2 False gggt
+train_model.py cnnclassiflows ../data/monojet ../runs/monojet/cnnclassiflows_3 True 2 False gggt
+train_model.py cnnclassiflows ../data/monojet ../runs/monojet/cnnclassiflows_4 True 2 False gggt
+train_model.py cnnclassiflows ../data/monojet ../runs/monojet/cnnclassiflows_5 True 2 False gggt
+train_model.py racnnflows ../data/monojet ../runs/monojet/racnnflows_1 True 2 False gggt
+train_model.py racnnflows ../data/monojet ../runs/monojet/racnnflows_2 True 2 False gggt
+train_model.py racnnflows ../data/monojet ../runs/monojet/racnnflows_3 True 2 False gggt
+train_model.py racnnflows ../data/monojet ../runs/monojet/racnnflows_4 True 2 False gggt
+train_model.py racnnflows ../data/monojet ../runs/monojet/racnnflows_5 True 2 False gggt
+train_model.py cnnflows ../data/monojet ../runs/monojet/cnnflows_1 True 2 False gggt
+train_model.py cnnflows ../data/monojet ../runs/monojet/cnnflows_2 True 2 False gggt
+train_model.py cnnflows ../data/monojet ../runs/monojet/cnnflows_3 True 2 False gggt
+train_model.py cnnflows ../data/monojet ../runs/monojet/cnnflows_4 True 2 False gggt
+train_model.py cnnflows ../data/monojet ../runs/monojet/cnnflows_5 True 2 False gggt
+train_model.py racnnclass ../data/monojet ../runs/monojet/racnnclass_1 True 2 False gggt
+train_model.py racnnclass ../data/monojet ../runs/monojet/racnnclass_2 True 2 False gggt
+train_model.py racnnclass ../data/monojet ../runs/monojet/racnnclass_3 True 2 False gggt
+train_model.py racnnclass ../data/monojet ../runs/monojet/racnnclass_4 True 2 False gggt
+train_model.py racnnclass ../data/monojet ../runs/monojet/racnnclass_5 True 2 False gggt
+train_model.py cnnclass ../data/monojet ../runs/monojet/cnnclass_1 True 2 False gggt
+train_model.py cnnclass ../data/monojet ../runs/monojet/cnnclass_2 True 2 False gggt
+train_model.py cnnclass ../data/monojet ../runs/monojet/cnnclass_3 True 2 False gggt
+train_model.py cnnclass ../data/monojet ../runs/monojet/cnnclass_4 True 2 False gggt
+train_model.py cnnclass ../data/monojet ../runs/monojet/cnnclass_5 True 2 False gggt
+train_model.py necnnclassiflows ../data/monojet ../runs/monojet/necnnclassiflows_1 True 2 False gggt
+train_model.py necnnclassiflows ../data/monojet ../runs/monojet/necnnclassiflows_2 True 2 False gggt
+train_model.py necnnclassiflows ../data/monojet ../runs/monojet/necnnclassiflows_3 True 2 False gggt
+train_model.py necnnclassiflows ../data/monojet ../runs/monojet/necnnclassiflows_4 True 2 False gggt
+train_model.py necnnclassiflows ../data/monojet ../runs/monojet/necnnclassiflows_5 True 2 False gggt
+train_model.py necnnflows ../data/monojet ../runs/monojet/necnnflows_1 True 2 False gggt
+train_model.py necnnflows ../data/monojet ../runs/monojet/necnnflows_2 True 2 False gggt
+train_model.py necnnflows ../data/monojet ../runs/monojet/necnnflows_3 True 2 False gggt
+train_model.py necnnflows ../data/monojet ../runs/monojet/necnnflows_4 True 2 False gggt
+train_model.py necnnflows ../data/monojet ../runs/monojet/necnnflows_5 True 2 False gggt
+train_model.py necnnclass ../data/monojet ../runs/monojet/necnnclass_1 True 2 False gggt
+train_model.py necnnclass ../data/monojet ../runs/monojet/necnnclass_2 True 2 False gggt
+train_model.py necnnclass ../data/monojet ../runs/monojet/necnnclass_3 True 2 False gggt
+train_model.py necnnclass ../data/monojet ../runs/monojet/necnnclass_4 True 2 False gggt
+train_model.py necnnclass ../data/monojet ../runs/monojet/necnnclass_5 True 2 False gggt

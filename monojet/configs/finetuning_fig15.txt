@@ -1,0 +1,189 @@
+# Mono-jet Fig 15: the fixed signal region of the paper, with 1, 10, 100 datasets per theta (w1, w10, w100), 5 runs each.
+# Each line is one training run: <script> <arguments>. Run from this analysis folder, e.g.
+#   python $(grep -v '^#' configs/finetuning_fig15.txt | sed -n 1p)
+# NOISE=False: trained on s+b only; NOISE=True: on s+b and b. PSL=True: log-scale histogram normalisation.
+# Linear-data models are evaluated on data/monojet/finetune/test.h5, log-normalised ones on finetune_logpsl/w<N>/test.h5 or scratch_logpsl/w<N>/test.h5.
+
+# --- RACNN-ClassiFlow-L fine-tuned from run 5: linear or log normalisation x flow head only (FREEZE=True) or full (FREEZE=False). finetune_model.py arguments: MODEL_TYPE DATA_PATH SAVE_PATH NOISE MODEL_SIZE PSL JAMMY_LAYERS LOAD_PATH MR_TYPE FREEZE LOAD_EDIFF
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w1_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w1_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w1_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w1_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w1_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w10_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w10_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w10_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w10_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w10_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w100_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w100_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w100_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w100_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb_b/w100_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w1_1 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w1_2 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w1_3 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w1_4 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w1_5 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w10_1 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w10_2 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w10_3 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w10_4 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w10_5 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w100_1 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w100_2 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w100_3 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w100_4 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_head_sb/w100_5 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w1_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w1_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w1_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w1_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w1_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w10_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w10_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w10_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w10_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w10_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w100_1 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w100_2 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w100_3 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w100_4 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb_b/w100_5 True 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w1_1 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w1_2 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w1_3 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w1_4 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w1_5 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w10_1 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w10_2 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w10_3 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w10_4 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w10_5 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w100_1 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w100_2 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w100_3 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w100_4 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune ../runs/monojet/finetune_lin_full_sb/w100_5 False 2 False gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w1_1 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w1_2 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w1_3 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w1_4 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w1_5 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w10_1 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w10_2 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w10_3 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w10_4 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w10_5 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w100_1 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w100_2 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w100_3 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w100_4 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb_b/w100_5 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w1_1 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w1_2 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w1_3 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w1_4 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w1_5 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w10_1 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w10_2 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w10_3 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w10_4 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w10_5 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w100_1 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w100_2 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w100_3 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w100_4 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_head_sb/w100_5 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 True False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w1_1 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w1_2 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w1_3 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w1_4 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w1_5 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w10_1 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w10_2 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w10_3 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w10_4 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w10_5 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w100_1 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w100_2 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w100_3 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w100_4 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb_b/w100_5 True 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w1_1 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w1_2 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w1_3 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w1_4 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w1_5 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w1 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w10_1 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w10_2 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w10_3 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w10_4 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w10_5 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w10 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w100_1 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w100_2 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w100_3 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w100_4 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+finetune_model.py racnnclassiflows ../data/monojet/finetune_logpsl ../runs/monojet/finetune_logpsl_full_sb/w100_5 False 2 True gggt ../weights/monojet/racnnclassiflows_5 w100 False False
+
+# --- RACNN-ClassiFlow and CNN-Flow from scratch on log-normalised data. train_model.py arguments: MODEL_TYPE DATA_PATH SAVE_PATH NOISE MODEL_SIZE PSL JAMMY_LAYERS
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w1_1 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w1_2 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w1_3 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w1_4 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w1_5 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w10_1 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w10_2 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w10_3 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w10_4 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w10_5 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w100_1 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w100_2 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w100_3 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w100_4 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_b_w100_5 True 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w1_1 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w1_2 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w1_3 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w1_4 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w1_5 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w10_1 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w10_2 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w10_3 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w10_4 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w10_5 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w100_1 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w100_2 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w100_3 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w100_4 False 2 True gggt
+train_model.py racnnclassiflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/racnnclassiflows_sb_w100_5 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w1_1 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w1_2 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w1_3 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w1_4 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w1_5 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w10_1 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w10_2 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w10_3 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w10_4 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w10_5 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w100_1 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w100_2 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w100_3 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w100_4 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_b_w100_5 True 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_w1_1 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_w1_2 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_w1_3 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_w1_4 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w1 ../runs/monojet/scratch_logpsl/cnnflows_sb_w1_5 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_w10_1 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_w10_2 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_w10_3 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_w10_4 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w10 ../runs/monojet/scratch_logpsl/cnnflows_sb_w10_5 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_w100_1 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_w100_2 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_w100_3 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_w100_4 False 2 True gggt
+train_model.py cnnflows ../data/monojet/scratch_logpsl/w100 ../runs/monojet/scratch_logpsl/cnnflows_sb_w100_5 False 2 True gggt

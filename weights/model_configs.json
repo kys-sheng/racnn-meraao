@@ -1,0 +1,21 @@
+{
+  "description": "Constructor arguments to rebuild each model family before loading its safetensors state_dict. Classes live in bumphunt/racnn_model.py and monojet/racnn_model_mx.py of the GitHub repo. All models are float64 (call .double()). 'cnn_mode' says whether the forward pass takes only the histograms (True) or histograms plus auxiliary inputs (False).",
+  "bumphunt": {
+    "module": "racnn_model",
+    "racnnclassiflows": {"class": "RACNNClassiFlows", "kwargs": {"aux_input_size": 3, "cond_dim": 25, "hidden_size": 25, "hidden_size2": 50}, "cnn_mode": false},
+    "cnnclassiflows":   {"class": "CNNClassiFlows",   "kwargs": {"cond_dim": 25, "hidden_size": 25, "hidden_size2": 50}, "cnn_mode": true},
+    "racnnflows":       {"class": "RACNNFlows",       "kwargs": {"aux_input_size": 3, "cond_dim": 25, "hidden_size": 25, "hidden_size2": 50}, "cnn_mode": false},
+    "cnnflows":         {"class": "CNNFlows",         "kwargs": {"cond_dim": 25, "hidden_size": 25, "hidden_size2": 50}, "cnn_mode": true},
+    "racnnclass":       {"class": "RACNNClass",       "kwargs": {"aux_input_size": 3, "cond_dim": 25, "hidden_size": 25, "hidden_size2": 50}, "cnn_mode": false},
+    "cnnclass":         {"class": "CNNClass",         "kwargs": {"cond_dim": 25, "hidden_size": 25, "hidden_size2": 50}, "cnn_mode": true}
+  },
+  "monojet": {
+    "module": "racnn_model_mx",
+    "racnnclassiflows": {"class": "RACNNClassiFlows", "kwargs": {"aux_input_size": 11, "cond_dim": 50, "hidden_size": 100, "hidden_size2": 200, "in_channels": 3, "seq_len": 30, "jammy_layers": "gggt", "manifold": "e2"}, "cnn_mode": false},
+    "cnnclassiflows":   {"class": "CNNClassiFlows",   "kwargs": {"cond_dim": 50, "hidden_size": 100, "hidden_size2": 200, "in_channels": 3, "seq_len": 30, "jammy_layers": "gggt", "manifold": "e2"}, "cnn_mode": true},
+    "racnnflows":       {"class": "RACNNFlows",       "kwargs": {"aux_input_size": 11, "cond_dim": 50, "hidden_size": 100, "hidden_size2": 200, "in_channels": 3, "seq_len": 30, "jammy_layers": "gggt", "manifold": "e2"}, "cnn_mode": false},
+    "cnnflows":         {"class": "CNNFlows",         "kwargs": {"cond_dim": 50, "hidden_size": 100, "hidden_size2": 200, "in_channels": 3, "seq_len": 30, "jammy_layers": "gggt", "manifold": "e2"}, "cnn_mode": true},
+    "racnnclass":       {"class": "RACNNClass",       "kwargs": {"aux_input_size": 11, "cond_dim": 50, "hidden_size": 100, "hidden_size2": 200, "in_channels": 3, "seq_len": 30}, "cnn_mode": false},
+    "cnnclass":         {"class": "CNNClass",         "kwargs": {"cond_dim": 50, "hidden_size": 100, "hidden_size2": 200, "in_channels": 3, "seq_len": 30}, "cnn_mode": true}
+  }
+}

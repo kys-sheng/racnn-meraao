@@ -1,0 +1,52 @@
+# Bump hunt: the paper's models, 5 independent runs per family (the paper ensembles use 3 of them, see ensembles.json on Hugging Face).
+# Each line is one training run: <script> <arguments>. Run from this analysis folder, e.g.
+#   python $(grep -v '^#' configs/main_models.txt | sed -n 1p)
+# train_model.py arguments: MODEL_TYPE DATA_PATH SAVE_PATH NOISE PSL
+# NOISE=True: trained on signal-plus-background and background-only ensembles. PSL=False: linear histogram normalisation.
+
+# --- RACNN / CNN x ClassiFlow / Flow / Classifier, and the NECNN baseline (paper appendix)
+train_model.py racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_1 True False
+train_model.py racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_2 True False
+train_model.py racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_3 True False
+train_model.py racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_4 True False
+train_model.py racnnclassiflows ../data/bumphunt ../runs/bumphunt/racnnclassiflows_5 True False
+train_model.py cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_1 True False
+train_model.py cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_2 True False
+train_model.py cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_3 True False
+train_model.py cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_4 True False
+train_model.py cnnclassiflows ../data/bumphunt ../runs/bumphunt/cnnclassiflows_5 True False
+train_model.py racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_1 True False
+train_model.py racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_2 True False
+train_model.py racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_3 True False
+train_model.py racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_4 True False
+train_model.py racnnflows ../data/bumphunt ../runs/bumphunt/racnnflows_5 True False
+train_model.py cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_1 True False
+train_model.py cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_2 True False
+train_model.py cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_3 True False
+train_model.py cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_4 True False
+train_model.py cnnflows ../data/bumphunt ../runs/bumphunt/cnnflows_5 True False
+train_model.py racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_1 True False
+train_model.py racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_2 True False
+train_model.py racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_3 True False
+train_model.py racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_4 True False
+train_model.py racnnclass ../data/bumphunt ../runs/bumphunt/racnnclass_5 True False
+train_model.py cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_1 True False
+train_model.py cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_2 True False
+train_model.py cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_3 True False
+train_model.py cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_4 True False
+train_model.py cnnclass ../data/bumphunt ../runs/bumphunt/cnnclass_5 True False
+train_model.py necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_1 True False
+train_model.py necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_2 True False
+train_model.py necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_3 True False
+train_model.py necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_4 True False
+train_model.py necnnclassiflows ../data/bumphunt ../runs/bumphunt/necnnclassiflows_5 True False
+train_model.py necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_1 True False
+train_model.py necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_2 True False
+train_model.py necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_3 True False
+train_model.py necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_4 True False
+train_model.py necnnflows ../data/bumphunt ../runs/bumphunt/necnnflows_5 True False
+train_model.py necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_1 True False
+train_model.py necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_2 True False
+train_model.py necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_3 True False
+train_model.py necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_4 True False
+train_model.py necnnclass ../data/bumphunt ../runs/bumphunt/necnnclass_5 True False

@@ -54,7 +54,7 @@ if __name__ == "__main__":
     PSL        = eval(sys.argv[5])
     load_path  = sys.argv[6]
     mr_type    = sys.argv[7]
-    freeze     = eval(sys.argv[8])   # was the raw string, so "False" was truthy and every original run was frozen
+    freeze     = eval(sys.argv[8])   # True or False
     assert isinstance(freeze, bool), freeze
 
     assert save_path != load_path

@@ -1,0 +1,210 @@
+# Bump hunt Fig 7: fixed signal regions Low SR [0, 10] and High SR [20, 30], with 1, 3, 5, 10 datasets per theta (mr{1,3,5,10}s), 5 runs each.
+# Each line is one training run: <script> <arguments>. Run from this analysis folder, e.g.
+#   python $(grep -v '^#' configs/finetuning_fig7.txt | sed -n 1p)
+# All models are evaluated on data/bumphunt/finetune/test_{low,high}.h5 (CNN-Flow: scratch/<case>/test.h5, the same events in its own normalisation).
+
+# --- RACNN-ClassiFlow fine-tuned from run 5, flow head only. finetune_model.py arguments: MODEL_TYPE DATA_PATH SAVE_PATH NOISE PSL LOAD_PATH MR_TYPE FREEZE
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr1s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr1s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr3s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr3s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr5s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr5s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_1 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_2 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_3 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_4 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_low_5 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_low True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_1 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_2 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_3 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_4 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+finetune_model.py racnnclassiflows ../data/bumphunt/finetune ../runs/bumphunt/finetune/mr10s_high_5 True False ../weights/bumphunt/racnnclassiflows_5 mr10s_high True
+
+# --- RACNN-ClassiFlow from scratch, s+b (NOISE=False) and s+b & b (NOISE=True). train_model.py arguments: MODEL_TYPE DATA_PATH SAVE_PATH NOISE PSL
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_low ../runs/bumphunt/scratch_racnn/mr1s_low/racnnclassiflows_noiseless_5 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr1s_high ../runs/bumphunt/scratch_racnn/mr1s_high/racnnclassiflows_noiseless_5 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_low ../runs/bumphunt/scratch_racnn/mr3s_low/racnnclassiflows_noiseless_5 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr3s_high ../runs/bumphunt/scratch_racnn/mr3s_high/racnnclassiflows_noiseless_5 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_low ../runs/bumphunt/scratch_racnn/mr5s_low/racnnclassiflows_noiseless_5 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr5s_high ../runs/bumphunt/scratch_racnn/mr5s_high/racnnclassiflows_noiseless_5 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_low ../runs/bumphunt/scratch_racnn/mr10s_low/racnnclassiflows_noiseless_5 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseful_1 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseful_2 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseful_3 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseful_4 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseful_5 True False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseless_1 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseless_2 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseless_3 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseless_4 False False
+train_model.py racnnclassiflows ../data/bumphunt/finetune/mr10s_high ../runs/bumphunt/scratch_racnn/mr10s_high/racnnclassiflows_noiseless_5 False False
+
+# --- CNN-Flow from scratch, s+b (NOISE=False) and s+b & b (NOISE=True)
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_low ../runs/bumphunt/scratch/mr1s_low/cnnflows_noiseful_5 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr1s_high ../runs/bumphunt/scratch/mr1s_high/cnnflows_noiseful_5 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_low ../runs/bumphunt/scratch/mr3s_low/cnnflows_noiseful_5 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr3s_high ../runs/bumphunt/scratch/mr3s_high/cnnflows_noiseful_5 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_low ../runs/bumphunt/scratch/mr5s_low/cnnflows_noiseful_5 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr5s_high ../runs/bumphunt/scratch/mr5s_high/cnnflows_noiseful_5 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_low ../runs/bumphunt/scratch/mr10s_low/cnnflows_noiseful_5 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseless_1 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseless_2 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseless_3 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseless_4 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseless_5 False False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseful_1 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseful_2 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseful_3 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseful_4 True False
+train_model.py cnnflows ../data/bumphunt/scratch/mr10s_high ../runs/bumphunt/scratch/mr10s_high/cnnflows_noiseful_5 True False

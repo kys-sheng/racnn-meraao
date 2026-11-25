@@ -1,6 +1,5 @@
-# downloaded from Hugging Face (scripts/download.py) and training outputs
+# data/ is downloaded from Hugging Face (scripts/download.py); runs/ holds training outputs
 /data
-/weights
 /runs
 
 __pycache__/
